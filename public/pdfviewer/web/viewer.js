@@ -14,8 +14,8 @@
  */
 'use strict';
 var DEFAULT_URL = 'assignment';
-//var folderFiles = "../doc/";
-var folderFiles = "../../storage/";
+var folderFiles = "../doc/";
+//var folderFiles = "../../storage/";
 var pdfjsWebLibs; {
     pdfjsWebLibs = {
         pdfjsWebPDFJS: window.pdfjsDistBuildPdf

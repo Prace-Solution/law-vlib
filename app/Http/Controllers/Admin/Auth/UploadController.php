@@ -63,19 +63,18 @@ class UploadController extends Controller
     
         $pdfDocUrl =  $urlPath;
         $rPdfDoc =  $path ;
-     
-        $encodedPdfFileName = "base64pdf.pdf";
+    
         $prefix = "data:application/pdf;base64,";
         $b64Doc = chunk_split(base64_encode( File::get(storage_path('app/public/'.$path))));
-        $len = file_put_contents($encodedPdfFileName, "data:application/pdf;base64," . $b64Doc);
-        $totalLen = $len / (1024 * 1042);
-    
-       
+        //Storage::put( $folder . $filename , ($prefix . $b64Doc));
+        //$totalLen = $len / (1024 * 1042);
         $filetimestamp = '' . time();
         $filename = 'vlib-' . $filetimestamp . '.pdf.txt';
         $db_filename = 'vlib-' . $filetimestamp . '.pdf';
-        $folder = 'materials/' ;
-        Storage::put( $folder . $filename , ($prefix . $b64Doc));
+        $folder = '/doc/' ;
+       
+        $encodedPdfFileName = public_path('pdfviewer') . $folder .  $filename;
+         $len = file_put_contents($encodedPdfFileName, $prefix . $b64Doc);
         
         $sem = DB::table('semesters')->where('id', trim($request->available_in))->first();
         $data = array(
@@ -83,8 +82,8 @@ class UploadController extends Controller
             'available_in' => $sem->name,
             'slug' => $request->slug,
             'description' => $request->description,
-            'local_path' => $folder . $db_filename,
-            'url' => $urlPath,
+            'local_path' =>  $db_filename,
+            'url' => '',
             'course_id' => $request->course_code_option);
 
         if ($request->kind == '1' || $request->kind == 1) 
@@ -92,14 +91,12 @@ class UploadController extends Controller
 
             Material::create($data);
             Storage::delete($path);
-            return (json_encode(["status" => $folder . $db_filename . ' with extension: ' . $extension . " came successfully."]));
+            return (json_encode(["status" =>  $db_filename . ' with extension: ' . $extension . " came successfully."]));
 
         } else if ($request->kind == '2' || $request->kind == 2) {
             Resource::create($data);
             Storage::delete($path);
-           
-            File::delete(public_path(encodedPdfFileName));
-            return (json_encode(["status" => $folder . $db_filename . ' with extension: ' . $extension . " came successfully."]));
+            return (json_encode(["status" =>  $db_filename . ' with extension: ' . $extension . " came successfully."]));
         }
         else {
             return (json_encode(["status" => "Oops! Something went wrong. Make sure you provide the correct information needed."]));

@@ -24,8 +24,7 @@ Route::get('/', function () {
 })->name('welcome.index');
 
 Route::get('dir', function () {
-   // Auth::routes();
- 
+   return public_path('doc');
 })->name('welcome.index1');
 
 /*these are test routes ends*/

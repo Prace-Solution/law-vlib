@@ -5,7 +5,7 @@ namespace App;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 
-use App\Notifications\StudentResetPasswordNotification;
+use App\Notifications\SuperAdminResetPasswordNotification;
 
 class SuperAdmin extends Authenticatable
 {
