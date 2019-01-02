@@ -135,7 +135,7 @@ class SearchController extends Controller
 
                         '<td>' . ($department !== null ? $department->name : '') . '</td>' .
 
-                        '<td id="{{ $course->id }}"><a  class="active" ui-toggle-class=""><i class="fa fa-eye text-success text-active"></i></a><a><i class="fa fa-times text-danger text"></i></a></td>' .
+                        '<td id="' .$course->id .'"><a  class="active" ui-toggle-class=""><i class="fa fa-eye text-success text-active"></i></a><a><i class="fa fa-times text-danger text"></i></a></td>' .
 
                         '</tr>';
 
@@ -199,7 +199,7 @@ class SearchController extends Controller
                     '<td> <span class="text-ellipsis">' . $material->url . '</span> </td>'.
                     '<td> <span class="text-ellipsis">' . $material->description . '</span> </td>'.
                     '<td> <span class="text-ellipsis">' . ( $course==null ? "" : $course->code) . '</span> </td>'.
-                    '<td id="' . $material->id . '"><a href="' . route("admin.read") . '?file=' . $material->local_path  . '" class="active" ui-toggle-class=""><i class="fa fa-eye text-success text-active"></i></a>
+                    '<td id="' . $material->id . '"><a href="' . route('admin.read') . '?file=' . $material->local_path  . '" class="active" ui-toggle-class=""><i class="fa fa-eye text-success text-active"></i></a>
                     <a><i class="fa fa-times text-danger text"></i></a>
                     </td>' ;
                    
@@ -266,7 +266,7 @@ class SearchController extends Controller
                     // '<td> <span class="text-ellipsis">' . $resource->url . '</span> </td>'.
                     '<td> <span class="text-ellipsis">' . $resource->description . '</span> </td>'.
                     '<td> <span class="text-ellipsis">' . ( $course==null ? "NULL" : $course->code) . '</span> </td>'.
-                    '<td id="' . $resource->id . '"><a href="' . route("admin.read") . '?file=' . $resource->local_path  . '" class="active" ui-toggle-class=""><i class="fa fa-eye text-success text-active"></i></a>
+                    '<td id="' . $resource->id . '"><a href="' . route('admin.read') . '?file=' . $resource->local_path  . '" class="active" ui-toggle-class=""><i class="fa fa-eye text-success text-active"></i></a>
                      <a><i class="fa fa-times text-danger text"></i></a>
                      </td>' ;
                     

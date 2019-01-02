@@ -23,26 +23,26 @@ Route::get('/', function () {
    return view('panel.student');
 })->name('welcome.index');
 
-// Route::get('/pdfviewer', function () {
-//   return view('pdfviewer');
-// });
-
+Route::get('dir', function () {
+   // Auth::routes();
+ 
+})->name('welcome.index1');
 
 /*these are test routes ends*/
  
 /*this is the admin search routes start*/
 Route::get('admin/search', 'admin\SearchController@search');
-Route::get('admin/search/material', 'admin\SearchController@searchMaterial');
-Route::get('admin/search/resource', 'admin\SearchController@searchResourceItem');
-Route::get('admin/search/undergrad', 'admin\SearchController@searchPerson');
-Route::get('admin/search/postgrad', 'admin\SearchController@searchPerson');
-Route::get('admin/search/lecturer', 'admin\SearchController@searchPerson');
-Route::get('admin/search/department', 'admin\SearchController@searchDepartment');
+Route::get('admin/search/material', 'Admin\SearchController@searchMaterial');
+Route::get('admin/search/resource', 'Admin\SearchController@searchResourceItem');
+Route::get('admin/search/undergrad', 'Admin\SearchController@searchPerson');
+Route::get('admin/search/postgrad', 'Admin\SearchController@searchPerson');
+Route::get('admin/search/lecturer', 'Admin\SearchController@searchPerson');
+Route::get('admin/search/department', 'Admin\SearchController@searchDepartment');
 /*this is the admin search routes end*/
 
 /*this is the student search routes start*/
-Route::get('student/search/material', 'student\SearchController@searchMaterial');
-Route::get('student/search/resource', 'student\SearchController@searchResourceItem');
+Route::get('student/search/material', 'Student\SearchController@searchMaterial');
+Route::get('student/search/resource', 'Student\SearchController@searchRgitesourceItem');
 /*this is the student search routes end*/
 
 /*this is the template for content view start*/
@@ -317,4 +317,6 @@ Route::group(['prefix' => 'lecturer', 'namespace' => 'Lecturer','middleware' => 
           return Response(json_encode(["status" => $request->code . ' with slug: ' . $slug . " has been added successfully."]));
     });
 });
+
+
 /*this is the lecturer  routes ends*/

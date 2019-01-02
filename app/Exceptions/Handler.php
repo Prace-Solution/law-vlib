@@ -64,17 +64,6 @@ class Handler extends ExceptionHandler
         if($guard){
            return redirect()->guest(route($guard.'.index'));
         }
-        // switch ($guard) {
-        //     case 'student': $login = 'student.index';
-        //     break;
-        //     case 'admin': $login = 'admin.index';
-        //     break;
-        //     case 'lecturer': $login = 'lecturer.index';
-        //     break;
-        //     default: $login = 'student.index';
-        //     break;
-        // }
-
-       
+    
     }
 }

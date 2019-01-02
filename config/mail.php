@@ -30,9 +30,7 @@ return [
     */
 
    # 'host' => env('MAIL_HOST', 'smtp.mailgun.org'),
-    'host' => env('MAIL_HOST', 'crust-media.co
-    m
-    '),
+    'host' => env('MAIL_HOST', 'crust-media.com'),
 
 
     /*
@@ -47,7 +45,7 @@ return [
     */
 
     #'port' => env('MAIL_PORT', 587),
-    'port' => env('MAIL_PORT', 587),
+    'port' => env('MAIL_PORT',465),
 
     /*
     |--------------------------------------------------------------------------
@@ -61,7 +59,7 @@ return [
     */
 
     'from' => [
-        'address' => env('MAIL_FROM_ADDRESS', 'prncfoli@gmail.com'),
+        'address' => env('MAIL_FROM_ADDRESS', 'prince.foli@crust-media.com'),
         'name' => env('MAIL_FROM_NAME', 'Prince Foli'),
     ],
 
@@ -104,7 +102,9 @@ return [
     |
     */
 
-    'sendmail' => '/usr/sbin/sendmail -bs',
+    //'sendmail' => '/usr/sbin/sendmail -bs',
+    //'sendmail' => '/usr/sbin/sendmail/path -t',
+    'sendmail' => '/usr/sbin/sendmail -t -i',
 
     /*
     |--------------------------------------------------------------------------
@@ -119,7 +119,6 @@ return [
 
     'markdown' => [
         'theme' => 'default',
-
         'paths' => [
             resource_path('views/vendor/mail'),
         ],

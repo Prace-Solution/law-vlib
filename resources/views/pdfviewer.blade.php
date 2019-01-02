@@ -34,17 +34,17 @@ See https://github.com/adobe-type-tools/cmap-resources
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>PDF.js viewer</title>
 
-    <link rel="stylesheet" href="{{ asset('pdfViewer/web/viewer.css') }}">
-    <script src="{{ asset('pdfViewer/web/compatibility.js') }}"></script>
-	<script src="{{ asset('js/.cmds-head.js') }}"></script>
+    <link rel="stylesheet" href="{{ asset('pdfviewer/web/viewer.css') }}">
+    <script src="{{ asset('pdfviewer/web/compatibility.js') }}"></script>
+	<script src="{{ asset('js/cmds-head.js') }}"></script>
 
     <!-- This snippet is used in production (included from viewer.html) -->
-    <link rel="resource" type="application/l10n" href="{{ asset('pdfViewer/web/locale/locale.properties') }}">
-    <script src="{{ asset('pdfViewer/web/l10n.js') }}"></script>
-    <script src="{{ asset('pdfViewer/build/pdf.js') }}"></script>
+    <link rel="resource" type="application/l10n" href="{{ asset('pdfviewer/web/locale/locale.properties') }}">
+    <script src="{{ asset('pdfviewer/web/l10n.js') }}"></script>
+    <script src="{{ asset('pdfviewer/build/pdf.js') }}"></script>
 	{{--  ../build/pdf.worker.js   --}}
-    <script src="{{ asset('pdfViewer/build/pdf.worker.js') }}"></script>
-    <script src=" {{ asset('pdfViewer/web/viewer.js') }}" ></script>
+    <script src="{{ asset('pdfviewer/build/pdf.worker.js') }}"></script>
+    <script src=" {{ asset('pdfviewer/web/viewer.js') }}" ></script>
 </head>
 
 <body onmousedown="rightclick();" oncontextmenu="window.event.preventDefault();window.event.stopPropagation(); return false;" tabindex="1" class="loadingInProgress">
@@ -247,7 +247,7 @@ See https://github.com/adobe-type-tools/cmap-resources
             </menu>
 
             <div id="viewerContainer" tabindex="0">
-                <div id="viewer" class="pdfViewer"></div>
+                <div id="viewer" class="pdfviewer"></div>
             </div>
 
             <div id="errorWrapper" hidden='true'>
