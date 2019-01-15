@@ -48,6 +48,7 @@ See https://github.com/adobe-type-tools/cmap-resources
 </head>
 
 <body onmousedown="rightclick();" oncontextmenu="window.event.preventDefault();window.event.stopPropagation(); return false;" tabindex="1" class="loadingInProgress">
+   <div style='color: white; font-size: 14pt;margin-bottom: 8px;margin-top: 8px; padding: 16px; text-align: center'> Designed &amp; Developed by <a  style="color:#07bcbcbc" href='https://wwww.crust.media.com' target='_'><span>Crust</span></a></div>
     <div id="outerContainer">
 
         <div id="sidebarContainer">
@@ -364,6 +365,7 @@ See https://github.com/adobe-type-tools/cmap-resources
     </div>
     <!-- outerContainer -->
     <div id="printContainer"></div>
+     <div style='color: white; font-size: 14pt;margin-bottom: 8px;margin-top: 8px; padding: 16px; text-align: center'> Powered by <a  style="color:#07bcbcbc" href='https://wwww.crust.media.com' target='_'><span>Crust PDF Viewer</span></a></div>
     <script>
 
     </script>

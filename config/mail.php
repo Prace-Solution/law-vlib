@@ -17,7 +17,7 @@ return [
     */
 
     'driver' => env('MAIL_DRIVER', 'smtp'),
-
+/
     /*
     |--------------------------------------------------------------------------
     | SMTP Host Address
@@ -30,7 +30,7 @@ return [
     */
 
    # 'host' => env('MAIL_HOST', 'smtp.mailgun.org'),
-    'host' => env('MAIL_HOST', 'crust-media.com'),
+    'host' => env('MAIL_HOST', 'mail.ug-law-vlib.com'),
 
 
     /*
@@ -45,7 +45,7 @@ return [
     */
 
     #'port' => env('MAIL_PORT', 587),
-    'port' => env('MAIL_PORT',465),
+    'port' => env('MAIL_PORT',26),
 
     /*
     |--------------------------------------------------------------------------
@@ -59,8 +59,8 @@ return [
     */
 
     'from' => [
-        'address' => env('MAIL_FROM_ADDRESS', 'prince.foli@crust-media.com'),
-        'name' => env('MAIL_FROM_NAME', 'Prince Foli'),
+        'address' => env('MAIL_FROM_ADDRESS', 'support@ug-law-vlib.com'),
+        'name' => env('MAIL_FROM_NAME', 'UG LAW SCHOOL - Vlib Support'),
     ],
 
     /*
@@ -102,9 +102,9 @@ return [
     |
     */
 
-    //'sendmail' => '/usr/sbin/sendmail -bs',
+    'sendmail' => '/usr/sbin/sendmail -bs',
     //'sendmail' => '/usr/sbin/sendmail/path -t',
-    'sendmail' => '/usr/sbin/sendmail -t -i',
+    //'sendmail' => '/usr/sbin/sendmail -t -i',
 
     /*
     |--------------------------------------------------------------------------

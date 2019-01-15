@@ -1,24 +1,24 @@
-        document.onkeydown = function(e) {
-            e = e || window.event; //Get event 
-            if (e.ctrlKey) {
-                var c = e.which || e.keyCode; //Get key code
-                //Block Ctrl+S case 87://Block Ctrl+W --Not work in Chrome e.preventDefault(); e.stopPropagation();
-                // 8 : BackSpace , 46 : Delete , 37 : Left , 39 : Rigth , 144: Num Lock 
-                if (e.which != 8 &&
-                    e.which != 46 &&
-                    e.which != 37 &&
-                    e.which != 39 &&
-                    e.which != 144 &&
-                    (e.which < 96 || e.which > 105)) {
+        // document.onkeydown = function(e) {
+        //     e = e || window.event; //Get event 
+        //     if (e.ctrlKey) {
+        //         var c = e.which || e.keyCode; //Get key code
+        //         //Block Ctrl+S case 87://Block Ctrl+W --Not work in Chrome e.preventDefault(); e.stopPropagation();
+        //         // 8 : BackSpace , 46 : Delete , 37 : Left , 39 : Rigth , 144: Num Lock 
+        //         if (e.which != 8 &&
+        //             e.which != 46 &&
+        //             e.which != 37 &&
+        //             e.which != 39 &&
+        //             e.which != 144 &&
+        //             (e.which < 96 || e.which > 105)) {
 
-                    e.preventDefault();
-                    e.stopPropagation();
+        //             e.preventDefault();
+        //             e.stopPropagation();
 
-                    return false;
+        //             return false;
 
-                }
-            }
-        };
+        //         }
+        //     }
+        // };
 
 
         function disableSelect() {
@@ -69,42 +69,42 @@
 
         }
 
-        disableSelect();
-        document.onkeydown = handleKeyDown;
+        //disableSelect();
+       // document.onkeydown = handleKeyDown;
 
-        document.onkeydown = function(e) {
-            e = e || window.event; //Get event 
-            if (e.ctrlKey) {
-                var c = e.which || e.keyCode  ;
-                //Getkey code
-                switch (c) {
-                    case 83: //Block Ctrl+S case 87://Block Ctrl+W --Not work in Chrome
-                        e.preventDefault();
-                        e.stopPropagation();
+        // document.onkeydown = function(e) {
+        //     e = e || window.event; //Get event 
+        //     if (e.ctrlKey) {
+        //         var c = e.which || e.keyCode  ;
+        //         //Getkey code
+        //         switch (c) {
+        //             case 83: //Block Ctrl+S case 87://Block Ctrl+W --Not work in Chrome
+        //                 e.preventDefault();
+        //                 e.stopPropagation();
 
-                        break; // 8 : BackSpace , 46 : Delete , 37 : Left , 39 : Rigth , 144: Num Lock
+        //                 break; // 8 : BackSpace , 46 : Delete , 37 : Left , 39 : Rigth , 144: Num Lock
 
-                }
-                return false;
-            }
-        };
+        //         }
+        //         return false;
+        //     }
+        // };
 
-        document.onkeyup = function(e) {
-            e = e || window.event; //Get event
-            if (e.ctrlKey) {
-                var c = e.which || e.keyCode;
-                //Getkey
-                code
-                switch (c) {
-                    case 44: //Block Ctrl+S case 87://Block Ctrl+W --Not work in Chrome e.preventDefault(); e.stopPropagation();
-                        break; // 8 : BackSpace , 46 : Delete , 37 : Left , 39 : Rigth , 144: Num Lock case 44: //Block Ctrl+S case 87://Block Ctrl+W
-                        e.preventDefault();
-                        e.stopPropagation();
-                        break;
-                }
-                return false;
-            }
-        };
+        // document.onkeyup = function(e) {
+        //     e = e || window.event; //Get event
+        //     if (e.ctrlKey) {
+        //         var c = e.which || e.keyCode;
+        //         //Getkey
+        //         code
+        //         switch (c) {
+        //             case 44: //Block Ctrl+S case 87://Block Ctrl+W --Not work in Chrome e.preventDefault(); e.stopPropagation();
+        //                 break; // 8 : BackSpace , 46 : Delete , 37 : Left , 39 : Rigth , 144: Num Lock case 44: //Block Ctrl+S case 87://Block Ctrl+W
+        //                 e.preventDefault();
+        //                 e.stopPropagation();
+        //                 break;
+        //         }
+        //         return false;
+        //     }
+        // };
 
         processKeyEvent = function(eventType, event) {
             if (window.event) {
@@ -121,23 +121,23 @@
         processKeyDown = function(event) {
             processKeyEvent("onkeydown", event);
         };
-        document.onkeyup = processKeyUp;
-        document.onkeydown = processKeyDown;
+       // document.onkeyup = processKeyUp;
+       // document.onkeydown = processKeyDown;
        
-        window.onclick = function (event) {
-			if (event.ctrlKey || macKeys.ctrlKey || macKeys.cmdKey) {
-				//alert("Hello there");
-				event.preventDefault();
-				event.stopPropagation();
+        // window.onclick = function (event) {
+		// 	if (event.ctrlKey || macKeys.ctrlKey || macKeys.cmdKey) {
+		// 		//alert("Hello there");
+		// 		//event.preventDefault();
+		//  		//event.stopPropagation();
 
-			}
-		}
+		// 	}
+		// }
         try 
         {
-           $(window).bind('keydown.ctrl_s keydown.meta_s', function(event) {
-			    event.preventDefault();
-		    	event.stopPropagation();
-		    });
+        //    $(window).bind('keydown.ctrl_s keydown.meta_s', function(event) {
+		// 	    //event.preventDefault();
+		//     	//event.stopPropagation();
+		//     });
         } catch (error) {
             console.log('error',error);
         }

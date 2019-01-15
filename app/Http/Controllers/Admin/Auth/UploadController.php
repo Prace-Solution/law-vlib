@@ -52,17 +52,10 @@ class UploadController extends Controller
     public function upload(Request $request)
     {
 
-       
-
         $pdfdoc = $request->file('uploadable');
         $extension = $pdfdoc->getClientOriginalExtension();
         $filename = 'vlib-'.time() . '.' . $extension ;
-
         $path = $pdfdoc->storeAs('materials',$filename);
-        $urlPath = asset('storage/' . $path);
-    
-        $pdfDocUrl =  $urlPath;
-        $rPdfDoc =  $path ;
     
         $prefix = "data:application/pdf;base64,";
         $b64Doc = chunk_split(base64_encode( File::get(storage_path('app/public/'.$path))));

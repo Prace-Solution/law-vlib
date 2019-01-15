@@ -57,6 +57,8 @@ class AdminResetPasswordNotification extends Notification
     public function toMail($notifiable)
     {
         return (new MailMessage)
+            ->subject("UG Law School Student Password Reset.")
+            ->markdown('admin.notification.email')
             ->line('You are receiving this email because we received a password reset request for your account.')
             ->action('Reset Password', url( config('app.url') . route('admin.password.reset', $this->token, false)))
             ->line('If you did not request a password reset, no further action is required.');

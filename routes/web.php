@@ -228,6 +228,7 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin','middleware' => ['web'
    
     Route::get('home', 'HomeController@index')->name('admin.home');
     Route::get('home/{nav?}', 'HomeController@show')->name('admin.home.nav');
+    Route::get('read', 'ReadController@read')->name('admin.read');
     
     Route::post('password/email', 'Auth\ForgotPasswordController@sendResetLinkEmail')->name('admin.password.email');
     Route::post('password/reset', 'Auth\ResetPasswordController@reset');

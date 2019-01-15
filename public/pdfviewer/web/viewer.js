@@ -14,7 +14,7 @@
  */
 'use strict';
 var DEFAULT_URL = 'assignment';
-var folderFiles = "../doc/";
+var folderFiles = "/pdfviewer/doc/";
 //var folderFiles = "../../storage/";
 var pdfjsWebLibs; {
     pdfjsWebLibs = {

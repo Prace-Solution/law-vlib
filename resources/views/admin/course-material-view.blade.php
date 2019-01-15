@@ -172,7 +172,7 @@
                                         </td>
 
                                          <td id="{{ $material->id }} ">
-                                            <a href="{{ url('pdfviewer/web/viewer.html?file='.$material->local_path) }}" class="active" ui-toggle-class=""><i class="fa fa-check text-success text-active"></i></a>
+                                            <a href="{{ route('admin.read') . '?file='.$material->local_path }}" class="active" ui-toggle-class=""><i class="fa fa-check text-success text-active"></i></a>
                                             <a><i class="fa fa-times text-danger text"></i></a>
                                         </td>    
 

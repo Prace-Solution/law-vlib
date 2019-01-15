@@ -174,15 +174,11 @@ class SearchController extends Controller
                     $materials = DB::table('materials')->where($search_option_v, 'LIKE', "%" . trim($course->id) . "%")->get();
                 }
 
-               
             }
             else
             {
                 $materials = DB::table('materials')->where($search_option_v, 'LIKE', "%" . trim($request->search) . "%")->get();
-                
             }
-
-
 
             if (!empty($materials)){
 
